@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hotel</title>
+<script>
+function fetch(menu)
+{
+var req;
+if (window.XMLHttpRequest)
+  {
+  req=new XMLHttpRequest();
+  }
+else
+  {
+  req=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+req.onreadystatechange=function()
+  {
+  if (req.readyState==4 && req.status==200)
+    {
+  
+	 document.getElementById("box").innerHTML=req.responseText;
+    }
+  }
+req.open("GET",menu,true);
+req.send();
+}
+
+
+function fetch2(menu)
+{
+var req2;
+if (window.XMLHttpRequest)
+  {
+  req2=new XMLHttpRequest();
+  }
+else
+  {
+  req2=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+req2.onreadystatechange=function()
+  {
+  if (req2.readyState==4 && req2.status==200)
+    {
+  
+	 document.getElementById("box2").innerHTML=req2.responseText;
+    }
+  }
+req2.open("GET",menu,true);
+req2.send();
+}
+
+function fetch3(menu)
+{
+var req3;
+if (window.XMLHttpRequest)
+  {
+  req3=new XMLHttpRequest();
+  }
+else
+  {
+  req3=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+req3.onreadystatechange=function()
+  {
+  if (req3.readyState==4 && req3.status==200)
+    {
+  
+	 document.getElementById("box3").innerHTML=req3.responseText;
+    }
+  }
+req3.open("GET",menu,true);
+req3.send();
+}
+</script>
+<style>
+#box{
+    line-height:30px;
+    background-color:#800000;
+    height:150px;
+    width:200px;
+    padding:5px;}
+	#box2
+	{
+    line-height:30px;
+    background-color:#800000;
+    height:150px;
+    width:200px;
+    padding:5px;}
+    #box3
+	{
+    line-height:30px;
+    background-color:#800000;
+    height:150px;
+    width:200px;
+    padding:5px;}
+</style>	
+</head>
+<body style="background-image:url('Pyong.jpg');background-size:100%; background-repeat: no-repeat; color:white">
+<div id="box"><h2>Athens</h2></div>
+<br>
+<div id="box2"><h2>London</h2></div>
+<br>
+<div id="box3"><h2>Paris</h2></div>
+<br>
+<form>
+<input type = "button" value = "AthensInfo"         onclick = "fetch('hotel.php?select=1')"> <br>
+<input type = "button" value = "LondonInfo" onclick = "fetch2('hotel.php?select=2')"> <br>
+<input type = "button" value = "ParisInfo" onclick = "fetch3('hotel.php?select=3')"> <br>
+	
+    </form>
+</body>
+</html>
